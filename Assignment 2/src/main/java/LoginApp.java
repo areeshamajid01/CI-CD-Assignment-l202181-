@@ -58,6 +58,9 @@ public class LoginApp extends JFrame {
 
     public String authenticateUser(String email) {
         String userName = null;
+        if (email == null || email.isEmpty() || !email.contains("@")) {
+            return null;  // Invalid email
+        }
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String query = "SELECT name FROM User WHERE Email = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
