@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11' # Update if you're using a different JDK version
+        distribution: 'temurin'
 
     - name: Run Tests
       run: |
