@@ -30,7 +30,7 @@ jobs:
         # Compile the Java files, including the lib directory in the classpath
         javac -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:src/main/java:src/test/java" \
               -d build/classes \
-              src/main/java/LoginApp.java src/test/java/LoginAppTest.java
+              main/java/LoginApp.java test/java/LoginAppTest.java
 
         # Run the tests using JUnit
         java -cp "build/classes:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" \
