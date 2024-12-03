@@ -1,3 +1,7 @@
+import javax.swing.*;  // Import Swing components
+import java.awt.*;      // Import AWT components
+import java.awt.event.*; // Import event handling classes
+import java.sql.*;
 public class LoginApp extends JFrame {
     private JTextField emailField;
     private JPasswordField passwordField;
