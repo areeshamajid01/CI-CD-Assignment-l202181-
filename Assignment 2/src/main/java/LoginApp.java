@@ -81,6 +81,8 @@ public class LoginApp extends JFrame {
             boolean isTesting = System.getProperty("java.awt.headless") != null && System.getProperty("java.awt.headless").equals("true");
             LoginApp loginApp = new LoginApp(isTesting);
             System.out.println("test4");
+            System.out.println("test4");
+            System.out.println("test4");
             loginApp.setVisible(true);
         });
     }
