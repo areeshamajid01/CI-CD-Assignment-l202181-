@@ -80,6 +80,7 @@ public class LoginApp extends JFrame {
             LoginApp loginApp = new LoginApp();
             System.out.println("test2");
             System.out.println("test3");
+            System.out.println("test4");
             loginApp.setVisible(true);
         });
     }
