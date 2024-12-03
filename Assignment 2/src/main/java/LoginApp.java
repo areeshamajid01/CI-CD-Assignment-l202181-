@@ -79,6 +79,7 @@ public class LoginApp extends JFrame {
         SwingUtilities.invokeLater(() -> {
             LoginApp loginApp = new LoginApp();
             System.out.println("test2");
+            System.out.println("test3");
             loginApp.setVisible(true);
         });
     }
