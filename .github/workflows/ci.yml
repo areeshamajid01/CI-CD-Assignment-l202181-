@@ -26,7 +26,8 @@ jobs:
         cd Assignment\ 2/src
         
         # Compile the Java files
-        javac -cp . main/java/LoginApp.java test/java/LoginAppTest.java
+        #javac -cp . main/java/LoginApp.java test/java/LoginAppTest.java
+        javac -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:src" -d build/classes src/main/java/LoginApp.java src/test/java/LoginAppTest.java
         
         # Run the tests using JUnit
         java -cp .:test/java:main/java org.junit.runner.JUnitCore LoginAppTest
