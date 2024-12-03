@@ -9,7 +9,7 @@ public class LoginAppTest {
     public void setUp() {
         // Initialize the LoginApp without creating a GUI
         System.setProperty("java.awt.headless", "true");
-        loginApp = new LoginApp();
+        loginApp = new LoginApp(true);
     }
 
     // Test Case 1: Email Validation Tests
