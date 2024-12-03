@@ -8,6 +8,7 @@ public class LoginAppTest {
     @Before
     public void setUp() {
         // Initialize the LoginApp without creating a GUI
+        System.setProperty("java.awt.headless", "true");
         loginApp = new LoginApp();
     }
 
