@@ -17,11 +17,16 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '11' # Update if you're using a different JDK version
+        java-version: '11'
         distribution: 'temurin'
 
-    - name: Run Tests
+    - name: Compile and Run Tests
       run: |
-        cd src/test/java
-        javac -cp .:../../main/java LoginAppTest.java
-        java -cp .:../../main/java org.junit.runner.JUnitCore LoginAppTest
+        # Navigate to the src directory
+        cd Assignment\ 2/src
+        
+        # Compile the Java files
+        javac -cp . main/java/LoginApp.java test/java/LoginAppTest.java
+        
+        # Run the tests using JUnit
+        java -cp .:test/java:main/java org.junit.runner.JUnitCore LoginAppTest
