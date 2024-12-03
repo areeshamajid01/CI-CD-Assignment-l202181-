@@ -1,16 +1,13 @@
 name: Java CI
 
 on:
-  push:
-    branches:
-      - '*'
   pull_request:
     branches:
       - main
       - master
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +17,10 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '17'
+        java-version: '11' # Update if you're using a different JDK version
 
-    - name: Compile Java code
-      run: javac -d out src/**/*.java
-
-    - name: Run tests
-      run: java -cp "out:lib/*" org.junit.runner.JUnitCore LoginAppTest
-
+    - name: Run Tests
+      run: |
+        cd src/test/java
+        javac -cp .:../../main/java LoginAppTest.java
+        java -cp .:../../main/java org.junit.runner.JUnitCore LoginAppTest
