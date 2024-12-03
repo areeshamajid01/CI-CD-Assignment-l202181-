@@ -22,12 +22,17 @@ jobs:
 
     - name: Compile and Run Tests
       run: |
-        # Navigate to the src directory
-        cd Assignment\ 2/src
+        # Navigate to the src directory (handle spaces in folder names)
+        cd "Assignment 2/src"
         
-        # Compile the Java files
-        #javac -cp . main/java/LoginApp.java test/java/LoginAppTest.java
-        javac -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:src" -d build/classes src/main/java/LoginApp.java src/test/java/LoginAppTest.java
-        
+        # Create a directory for compiled classes
+        mkdir -p build/classes
+
+        # Compile the Java files, including libraries and source directories
+        javac -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:main/java:test/java" \
+              -d build/classes \
+              main/java/LoginApp.java test/java/LoginAppTest.java
+
         # Run the tests using JUnit
-        java -cp .:test/java:main/java org.junit.runner.JUnitCore LoginAppTest
+        java -cp "build/classes:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" \
+             org.junit.runner.JUnitCore LoginAppTest
